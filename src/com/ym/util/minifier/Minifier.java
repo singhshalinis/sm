@@ -17,7 +17,7 @@ public class Minifier {
 	 * 
 	 * Assumptions/Limitations: 
 	 * <li>This code will only be able to handle max chars that can be stored in a 
-	 * String and StringBuffer (both are backed by a char array and arrays have int index so, 
+	 * String which is backed by a char array and arrays have int index so, 
 	 * max of Integer.MAX_VALUE chars. The case when final string length becomes > Integer.MAX_VALUE,
 	 * is not handled. </li>
 	 * <li>"You" and "you" are different.</li>

@@ -20,6 +20,12 @@ public class Minifier {
 	 * <ul>
 	 * <li>The length of final String can be greater than the length of input String. This code only
 	 * handles max chars that can be stored in a String for both - input and output. 
+=======
+	 * <li>This code will only be able to handle max chars that can be stored in a 
+	 * String which is backed by a char array and arrays have int index so, 
+	 * max of Integer.MAX_VALUE chars. The case when final string length becomes > Integer.MAX_VALUE,
+	 * is not handled. </li>
+>>>>>>> aa150d757aec007ef5bdb9a1c41b9992a7bf7abb
 	 * <li>"You" and "you" are different.</li>
 	 * <li>All whitespaces are preserved.</li> 
 	 * </ul>

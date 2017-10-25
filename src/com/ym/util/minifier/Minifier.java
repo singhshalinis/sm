@@ -13,16 +13,27 @@ public class Minifier {
 	 * Time complexity: O(n), where n is the length of the input String.
 	 * Space complexity: It is linear with respect to input string. But due to the way the logic 
 	 * is defined, the length of converted output string might be larger than the input string. But 
-	 * it would still be linear.
+	 * it would still be linear. There is also extra space involved due to the Map.
 	 * 
+	 * <p>
 	 * Assumptions/Limitations: 
-	 * <li>This code will only be able to handle max chars that can be stored in a 
-	 * String and StringBuffer (both are backed by a char array and arrays have int index so, 
-	 * max of Integer.MAX_VALUE chars. The case when final string length becomes > Integer.MAX_VALUE,
-	 * is not handled. </li>
+	 * <ul>
+	 * <li>The length of final String can be greater than the length of input String. This code only
+	 * handles max chars that can be stored in a String for both - input and output. 
 	 * <li>"You" and "you" are different.</li>
 	 * <li>All whitespaces are preserved.</li> 
+	 * </ul>
 	 * 
+	 * <p>
+	 * Alternate Approach:
+	 * <ul>
+	 * <li>Use regular expression to find the identifiers.</li>
+	 * <li>Replace all occurrences of the identifier with a '$' + identifier index.</li>
+	 * <li>Replace the first occurrence back to the identifier.</li>
+	 * </ul>
+	 * Pros: The code is elegant and simple. 
+	 * Cons: There are multiple scans on the input that would need to be performed. Also, replacing 
+	 * would create new String objects as Strings are unmutable. 
 	 * 
 	 * @param str - String containing source code 
 	 * @return - Converted string where the subsequent duplicate identifiers are replaced by logic defined.
